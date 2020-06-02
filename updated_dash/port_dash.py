@@ -19,7 +19,7 @@ from web3.gas_strategies.time_based import medium_gas_price_strategy
 from web3.auto.gethdev import w3
 
 #w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:8545"))
-w3 = Web3(Web3.HTTPProvider("https://kovan.infura.io/v3/c939afba949d4aa2903246e8029e4d49"))
+w3 = Web3(Web3.HTTPProvider("https://kovan.infura.io/v3/{INFURA_PROJECT_ID}"))
 #w3.middleware_onion.inject(geth_poa_middleware, layer=0)
 #w3.eth.setGasPriceStrategy(medium_gas_price_strategy)
 
