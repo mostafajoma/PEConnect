@@ -20,6 +20,69 @@ w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:8545"))
 w3.middleware_onion.inject(geth_poa_middleware, layer=0)
 w3.eth.setGasPriceStrategy(medium_gas_price_strategy)
 
+# ticker_list = pd.read_html('http://en.wikipedia.org/wiki/List_of_S%26P_500_companies')[0]['Symbol']
+
+# Ignore
+def calculate_sharpe(ticker, time_frame):
+    
+    stock = yf.Ticker(ticker)
+    df = stock.history(period=time_frame)['Close'].to_frame()
+    
+    df['Daily Returns'] = df['Close'].diff()
+    df.dropna(inplace=True)
+    
+    risk_free = 0.0067
+    avg_return = df['Daily Returns'].mean()
+    vol = df['Daily Returns'].std()
+    sharpe = (avg_return - risk_free) / vol * np.sqrt(252)
+    
+    return sharpe
+
+weights = [0.40, 0.25, 0.15, 0.10, 0.05, 0.05]
+
+conservative_stocks = ['NEM', 'DG', 'REGN', 'DXCM', 'AAPL']
+moderate_stocks = ['DXCM', 'NVDA', 'ODFL', 'DG', 'REGN', 'AAPL']
+aggressive_stocks = ['NVDA', 'DXCM', 'AAPL', 'SWKS', 'ODFL']
+
+# Ignore
+def cum_return(stock_list, weight_list, time_frame):
+    
+    df = pd.DataFrame()
+    
+    for stock in stock_list:
+        ticker = yf.Ticker(stock)
+        df[f'{stock} Close'] = ticker.history(period=time_frame)['Close']
+        df.dropna(inplace=True)
+        
+    cumulative_returns = []    
+    
+    for date in df.index:
+        index = 0
+        adj_closes = []
+        
+        for i in df.loc[date]:
+            adj_close = i * weights[index]
+            adj_closes.append(adj_close)
+        
+            index += 1
+            
+        cum_adj_return = sum(adj_closes)
+        cumulative_returns.append(cum_adj_return)
+        
+    df['Portfolio Adj. Close'] = cumulative_returns
+    
+    df['Daily Adj. Return'] = df['Portfolio Adj. Close'].diff()
+    df.dropna(inplace=True)
+    
+    risk_free = 0.0067
+    avg_return = df['Daily Adj. Return'].mean()
+    vol = df['Daily Adj. Return'].std()
+    sharpe = (avg_return - risk_free) / vol * np.sqrt(252)
+        
+    return df, sharpe
+
+
+
 # Need to update address and ABI if new contract deployed
 pupper_coin_sale_contract = w3.eth.contract(address='0xCEA15ad8DB69C256BD57AD47636A97B51FEa4ef1', abi='''[
 	{
