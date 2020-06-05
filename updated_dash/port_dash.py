@@ -24,6 +24,10 @@ from web3.auto.gethdev import w3
 
 # For Kovan live testnet
 w3 = Web3(Web3.HTTPProvider("https://kovan.infura.io/v3/{INFURA_PROJECT_ID}"))
+<<<<<<< HEAD
+=======
+
+>>>>>>> db55f9c508e721d53c93e2dc64f3297309ad3412
 #w3.middleware_onion.inject(geth_poa_middleware, layer=0)
 #w3.eth.setGasPriceStrategy(medium_gas_price_strategy)
 
