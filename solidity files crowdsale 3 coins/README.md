@@ -1,9 +1,5 @@
 
 
-## useful links and info
+## Solidity contracts 
 
-wallet address fund 1 
-
-wallet address fund 2 
-
-wallet address fund 3 
+Contracts for fundraising deployed in Remix (Solidity)
