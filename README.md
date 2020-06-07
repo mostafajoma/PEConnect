@@ -23,7 +23,7 @@ Our token will offers the potential for a more efficient and fair financial worl
   - Transparency:  Tokens will have the token-holder’s right and legal responsibilities embedded directly onto the token, along with an immutable record of ownership.
   - Compliance enforcement: Programs legal obligations into digital assets to ensure only eligible parties participate.
 
-   ![Advan1](imges/Advan-2.png)
+   ![advan1](imges/Advan-2.png)
    - Digital shares.
    - 24/7 Market.
    
