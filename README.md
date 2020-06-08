@@ -12,7 +12,7 @@ Our platform allows any investor to participate in Private Equity funds that are
 #### What is Tokenization?
   is the process of issuing blockchain token (also known as A security token) that digitally represents a reall tradable asset. These security tokens are created throught a security token offering (STO) 
   
- #### what is Security Token Offering (STO)?
+#### What is Security Token Offering (STO)?
   A security token offering (STO)/tokenized IPO is a type of public offering in which tokenized digital securities, known as security tokens, are sold in cryptocurrency exchanges. Tokens can be used to trade real financial assets such as equities and fixed income, and use a blockchain virtual ledger system to store and validate token transactions.
 
 
