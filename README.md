@@ -45,7 +45,7 @@ Our token will offers the potential for a more efficient and fair financial worl
 
 ### Python SciKit LSTM machine learning models for token price forecasting 
 
-![LSTM](screenshots/LSTM Projections.PNG)
+![LSTM](screenshots/LSTM_Projections.PNG)
 
 
 ![Metamask](https://walletconnect.org/static/metamask-69ce6b56bbc9953dfb4aecebdf88729b.png)
