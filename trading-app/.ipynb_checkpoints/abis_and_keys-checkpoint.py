@@ -1,18 +1,7 @@
-
-#INFURA_PROJECT_ID = '<Insert Infura API key>''
-INFURA_PROJECT_ID = 'c939afba949d4aa2903246e8029e4d49'
-
-#owner_address = '<Insert address contract is deployed from>'
-owner_address = '0x6fcf00C368F1bafD79833db75AB87D6F8bE608D0'
-
-#owner_private_key = '<Insert key to above account>'
-owner_private_key = '9863dbceeeb64480b9daeb57ac55d2e2dcadbc8e469468cc127be7b6a39004f6'
-
-#deployer_contract_address = '<Insert address of Sale Deployer contract>'
-deployer_contract_address = '0xC8d010dAFeAcae3d7683B3c5936b765885F44052'
-
-#exchange_rate_key = '<Insert API key for USD/ETH exchange rate>'
-exchange_rate_key = 'AE657143-7169-4CE9-9923-73207061F320'
+# Contract address for Sale Deployer
+owner_address = '<Insert address contract is deployed from>'
+owner_private_key = '<Insert key to above account>'
+deployer_contract_address = '<Insert address of Sale Deployer contract>'
 
 
 # ABI for Sale Deployer
