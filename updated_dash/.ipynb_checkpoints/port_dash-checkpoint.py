@@ -1,6 +1,6 @@
 from abis_and_keys import *
 from constants import *
-#from exchange import *
+from lstm_predictor import prediction_plot
 import pandas as pd
 #import os
 import yfinance as yf
@@ -22,7 +22,6 @@ from bit.network import NetworkAPI
 from dotenv import load_dotenv
 from pathlib import Path
 import arch as arch
-#%matplotlib inline
 
 #Reading In First DF
 file_path = Path('PrivateEquityReturnsFinal.csv')
@@ -159,7 +158,7 @@ eth_rate = json.loads(response)['rate']
 #### Widgets ####
 
 plot_selector = widgets.Dropdown(
-    options = ['Historic Returns', 'Historic Volatility', 'Sharpe Ratios'],
+    options = ['Historic Returns', 'Historic Volatility', 'Sharpe Ratios', 'LSTM'],
     value = 'Historic Returns',
     description = 'Select: ',
     style = {'description_width': 'initial'},
@@ -611,13 +610,16 @@ coins_box = widgets.VBox([purchase_box, coins_purchased_box])
 def select_plots(selector):
     
     if selector == 'Historic Returns':
-        plot = rolling_std_plot
+        plot = fund_and_market_std
         
     elif selector == 'Historic Volatility':
         plot = rolling_beta_plot
         
     elif selector == 'Sharpe Ratios':
         plot = sr_plot
+        
+    elif selector == 'LSTM':
+        plot = prediction_plot
         
     return plot
 
