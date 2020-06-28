@@ -1,5 +1,5 @@
 ![header](imges/header.png)
-# Tokenization of private equity 
+# Tokenization of Private Equity 
 
 Our platform allows any investor to participate in Private Equity funds that are generally illiquid and offered to the ultra wealthy and corporations. Where funds will be raised through a crowd sale and then traded in the secondary market with a lock-in period of 10 years. Once money is raised, the fund will then seed startups focused in the broad market in order to mimic S&P500 performance.
 
